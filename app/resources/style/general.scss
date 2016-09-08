@@ -1,0 +1,18 @@
+@import 'constants';
+
+html {
+  overflow: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  left: $zero;
+  padding: $zero;
+  margin: $zero;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}

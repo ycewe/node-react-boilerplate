@@ -1,0 +1,11 @@
+@import 'constants';
+
+#app-body {
+  top: $header-height;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+ 

@@ -1,0 +1,64 @@
+@import 'constants';
+
+#drawer-toggle {
+  position: absolute;
+  opacity: $zero;
+}
+
+#drawer-toggle-label {
+  @include user-select(none);
+  -webkit-touch-callout: none;
+  cursor: pointer;
+  left: $zero;
+  height: $header-height;
+  width: $header-height;
+  display: block;
+  position: fixed;
+  z-index: $z-header;
+  background: url(../images/menu.svg) center center no-repeat;
+}
+
+#drawer {
+  position: fixed;
+  top: $zero;
+  left: $drawer-displacement;
+  height: 100%;
+  width: $drawer-width;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: $drawer-padding;
+  z-index: $z-drawer;
+  -webkit-overflow-scrolling: touch;
+}
+
+#drawer-toggle:checked ~ #drawer-toggle-label {
+  @include transition(background 0.25s ease-in-out);
+  height: 100%;
+  width: 100%;
+  background: rgba(128, 128, 128, 0.5);
+}
+
+#drawer-toggle:checked ~ #drawer {
+  @include transition(left .25s ease-in-out);
+  left: $zero;
+}
+
+@media all and (max-width:350px) { 
+
+  #drawer-toggle:checked ~ #drawer-toggle-label { 
+    height: 100%; 
+    width: $mobile-hamburger-icon-width; 
+  } 
+
+  #drawer-toggle:checked ~ #drawer-toggle-label, 
+  #drawer-toggle:checked ~ header { 
+    left: calc(100% - #{$mobile-hamburger-icon-width}); 
+  } 
+
+  #drawer-toggle:checked ~ #drawer { 
+    width: calc(100% - #{$mobile-hamburger-icon-width}); 
+    padding: $drawer-padding; 
+  } 
+}
+

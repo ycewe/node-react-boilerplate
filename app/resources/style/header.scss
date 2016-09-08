@@ -1,0 +1,42 @@
+@import 'constants';
+
+.app-header {
+  width: 100%;
+  height: $header-height;
+  color: #000;
+  background: #FFF;
+  position: fixed;
+  font-size: 1rem;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 2px 9px 1px rgba(0, 0, 0, 0.12),
+    0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  will-change: transform;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  transition: transform 0.233s cubic-bezier(0,0,0.21,1) 0.1s;
+
+  #header-title {
+    @include user-select(none);
+    font-size: 2rem;
+    flex: 1;
+    position: relative;
+    left: 6rem;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media all and (max-width:320px) {
+  #header-image {
+    visibility: hidden;  
+  }
+}
+

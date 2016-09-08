@@ -1,0 +1,52 @@
+$zero: 0;
+$root-height: 100vh;
+
+$header-height: 6rem;
+$z-header: 1000;
+
+$mobile-hamburger-icon-width: 3rem;
+$drawer-padding: 1rem;
+$drawer-displacement: -21rem;
+$drawer-width: 16rem;
+$z-drawer: 2000;
+
+@mixin font-face($font-family, $filepath, $font-weight, $font-style) {
+  @font-face {
+      font-family: $font-family;
+      src: url('#{$filepath}.otf') format('opentype');
+      font-weight: $font-weight;
+      font-style: $font-style;
+  }
+}
+
+@mixin wrap-word {
+  -ms-word-break: break-all;
+      word-break: break-all;
+      word-break: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}
+
+@mixin box-sizing($box-sizing) {
+  -webkit-box-sizing: $box-sizing;
+     -moz-box-sizing: $box-sizing;
+      -ms-box-sizing: $box-sizing;
+          box-sizing: $box-sizing;
+}
+
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select;
+          user-select: $select;
+}
+
+@mixin transition($transitions) {
+  -webkit-transition: $transitions;
+     -moz-transition: $transitions;
+      -ms-transition: $transitions;
+          transition: $transitions;
+}
+
